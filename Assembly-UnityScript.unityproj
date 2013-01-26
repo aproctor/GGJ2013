@@ -44,6 +44,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\RaidHealerAssets\Scripts\CoreGame\DungeonMaster.js" />
      <Compile Include="Assets\RaidHealerAssets\Scripts\CoreGame\LoadSceen.js" />
      <Compile Include="Assets\RaidHealerAssets\Scripts\GameObjs\GameDude.js" />
      <None Include="Assets\NGUI\Resources\Shaders\Depth.shader" />

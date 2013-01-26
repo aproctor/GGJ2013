@@ -32,7 +32,13 @@ function LateUpdate() {
  */
 function ChangeState(targetState) {
 	//validation of transition can go here
-	//post functions as well
+	
+	//post functions as well	
+	if(targetState == "Dead") {
+		//TODO swap display icon to dead icon
+	} else {
+		//TODO set display icon back to primary type
+	}
 	
 	state = targetState
 }
