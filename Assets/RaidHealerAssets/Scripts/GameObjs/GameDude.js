@@ -40,7 +40,7 @@ function ChangeState(targetState) {
 		//TODO set display icon back to primary type
 	}
 	
-	state = targetState
+	state = targetState;
 }
 
 /**
@@ -54,9 +54,9 @@ function UpdateHealth(delta : int) {
 	
 	if(targetHp > maxHealth) {
 		//Overheal
-		curHealth = maxHealth
+		curHealth = maxHealth;
 	} else if(targetHp < 0) {
-		Kill()
+		Kill();
 	} else {
 		curHealth = targetHp;
 	}
@@ -72,6 +72,6 @@ function Kill() {
 
 function Revive() {
 	curHealth = maxHealth;
-	ChangeState("Aggro")
+	ChangeState("Aggro");
 }
 
