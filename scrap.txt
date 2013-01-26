@@ -1,14 +1,17 @@
+===========================
 Plan:
+===========================
 
-Create Prefab for health bars
-Create Prefab/component for GameActor
+Create Prefab/component for GameDude
  - inc health bar link
+ - var cur health
+ - var max health
+ - var team <int>
+ - var primary type <string>  (Healer, Dps, Tank, Boss)
+ - var secondary type <string> (Main Tank, Off Tank)
  - inc state machine for life / death
- - inc settings for cur HP and max HP
- - inc list of abilities
- - inc <GameActor>Target
- - on hp update
-  	- switch state
+ - var abils List<GameAbility>
+ - inc <GameDude>Target
  - var map for state switching
  	- eg: on HP <= 0, state -> Dead
  - inc threat table
@@ -17,14 +20,18 @@ Create Prefab/component for GameActor
  	- if no cooldowns in cooldown list
  		- pickAbility() (inc, ThreatTable.pickTarget())
  		- Ability.cast(<Target>)
- - var team <int>
- - var 
- 	
- 
-Create Raid boss <GameActor>
+ - function updateHP(float delta)
+   - switch state
+
+Create Prefab for health bars
+ - var dude <GameDude>
+
+
+
+Create Raid boss <GameDude>
  - on update
  	- switch state based on timers
- 
+
 
 Create Threat Table
  - start with simple list of targets
@@ -40,24 +47,27 @@ Create Aura Component
  - on update
  	- if withinTickInterval, call .tick()
  	- if time alive > length => kill instance
- 	
- 	
+
+
 Create Cooldown Component (extend <Aura>?, interface?)
 
-Create component for abilities
+Create component for abilities <GameAbility>
  - inc list of Source Aura's (Cooldown's, Buffs, etc)
  - inc list of Target Aura's
  - inc cast time*
  - inc required state for Source
  - inc required state for Target
- 
- 
+
+
 Create Player object for tracking stats
 
 
 
-
+===========================
 Reference:
+===========================
+
+Life Cycle: http://www.richardfine.co.uk/junk/unity%20lifetime.png
 
 worm bullets: https://www.youtube.com/watch?feature=fvwp&NR=1&v=wfpZ7_aFoko
 
@@ -67,8 +77,26 @@ var myObj = Instantiate("prefabName", GameObject.Find("objectName").transform.po
 Scripting: https://www.youtube.com/watch?NR=1&v=2PB73B20zVw&feature=fvwp
 
 - Component.gameObject /* reference to game object */
-- Component.Awake() 
+- Component.Awake()
 - Component.Destroy(gameObject, lifetime <float>)
 - Component.transform
 	- .Rotate(x,y,z)
 	- .TransformDirection(Vector3.forward)
+  - .LookAt(target)
+- Update()
+- LateUpdate() //Called after Update()
+
+gameObject
+  - .tag //tag given to the game object
+
+- Quarternion
+  - .LookRotation(position - otherposition <Vector3?>)
+  - .Slerp(transform.rotation, Time.deltaTime * speed)
+  - .identity //identity matrix4?
+
+- Time
+  .time  (time in seconds, <float>)
+
+
+
+static variables are accessable throughout the scene? (maybe proj.)
