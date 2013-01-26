@@ -1,0 +1,5 @@
+Reference:
+
+worm bullets: https://www.youtube.com/watch?feature=fvwp&NR=1&v=wfpZ7_aFoko
+
+var myObj = Instantiate("prefabName", GameObject.Find("objectName").transform.position, Quaternion.identity /* Angle */)
