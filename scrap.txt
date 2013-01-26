@@ -1,5 +1,74 @@
+Plan:
+
+Create Prefab for health bars
+Create Prefab/component for GameActor
+ - inc health bar link
+ - inc state machine for life / death
+ - inc settings for cur HP and max HP
+ - inc list of abilities
+ - inc <GameActor>Target
+ - on hp update
+  	- switch state
+ - var map for state switching
+ 	- eg: on HP <= 0, state -> Dead
+ - inc threat table
+ - inc list of <Cooldowns> (default: empty)
+ - on update
+ 	- if no cooldowns in cooldown list
+ 		- pickAbility() (inc, ThreatTable.pickTarget())
+ 		- Ability.cast(<Target>)
+ - var team <int>
+ - var 
+ 	
+ 
+Create Raid boss <GameActor>
+ - on update
+ 	- switch state based on timers
+ 
+
+Create Threat Table
+ - start with simple list of targets
+ - function pickTarget()
+
+Create Aura Component
+ - var length
+ - var start time
+ - var cur tick
+ - var num ticks
+ - var onTickScript <Script>
+ - var onTickAbil <Ability>* (or just onTickDamage)
+ - on update
+ 	- if withinTickInterval, call .tick()
+ 	- if time alive > length => kill instance
+ 	
+ 	
+Create Cooldown Component (extend <Aura>?, interface?)
+
+Create component for abilities
+ - inc list of Source Aura's (Cooldown's, Buffs, etc)
+ - inc list of Target Aura's
+ - inc cast time*
+ - inc required state for Source
+ - inc required state for Target
+ 
+ 
+Create Player object for tracking stats
+
+
+
+
 Reference:
 
 worm bullets: https://www.youtube.com/watch?feature=fvwp&NR=1&v=wfpZ7_aFoko
 
 var myObj = Instantiate("prefabName", GameObject.Find("objectName").transform.position, Quaternion.identity /* Angle */)
+
+
+Scripting: https://www.youtube.com/watch?NR=1&v=2PB73B20zVw&feature=fvwp
+
+- Component.gameObject /* reference to game object */
+- Component.Awake() 
+- Component.Destroy(gameObject, lifetime <float>)
+- Component.transform
+	- .Rotate(x,y,z)
+	- .TransformDirection(Vector3.forward)
