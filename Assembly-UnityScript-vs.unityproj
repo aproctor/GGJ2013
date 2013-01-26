@@ -44,7 +44,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\RaidHealerAssets\Scripts\LoadSceen.js" />
+     <Compile Include="Assets\RaidHealerAssets\Scripts\CoreGame\LoadSceen.js" />
+     <Compile Include="Assets\RaidHealerAssets\Scripts\GameObjs\GameDude.js" />
      <None Include="Assets\NGUI\Resources\Shaders\Depth.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />

@@ -88,6 +88,7 @@ Scripting: https://www.youtube.com/watch?NR=1&v=2PB73B20zVw&feature=fvwp
 
 gameObject
   - .tag //tag given to the game object
+  - .GetComponent(ComponentClassName) //returns component or null, can be used to validate instead of tagging
 
 - Quarternion
   - .LookRotation(position - otherposition <Vector3?>)
@@ -99,4 +100,4 @@ gameObject
 
 
 
-static variables are accessable throughout the scene? (maybe proj.)
+static variables are accessable throughout the gameObject? (maybe scene or proj, seems unlikely)
