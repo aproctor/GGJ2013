@@ -1,12 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/RaidHealerAssets/Scripts/GameObjs/GameDude.js">
-    <Files>
-      <File FileName="Assets/RaidHealerAssets/Scripts/GameObjs/GameDude.js" Line="1" Column="1" />
-      <File FileName="Assets/RaidHealerAssets/Scripts/GameObjs/GameDudeHealthBar.js" Line="1" Column="1" />
-      <File FileName="Assets/RaidHealerAssets/Scripts/GameObjs/GameDudeCharFrame.js" Line="13" Column="25" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

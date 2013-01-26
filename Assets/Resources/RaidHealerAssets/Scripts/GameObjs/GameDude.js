@@ -5,9 +5,9 @@
  * are you a bad enough dude?
  */
 
-var curHealth : int;
-var maxHealth : int;
-var team : int;
+var curHealth : int = 1000;
+var maxHealth : int = 1000;
+var team : int = 0;
 var primaryType : String; //(eg: Healer, Dps, Tank, Boss)
 var secondaryType : String; //(eg: Main Tank, Off Tank, Dragon)
 var state : String; // Idle, Dead, Aggro
@@ -25,6 +25,22 @@ function Update () {
 
 function LateUpdate() {
 
+}
+
+function InitByType(classType : String) {
+	primaryType = classType;
+	if(classType == "tank") {
+		curHealth = 4000;
+		maxHealth = 4000;
+	} else if(classType == "dps") {
+		curHealth = 1000;
+		maxHealth = 1000;
+	} else if(classType == "healer") {
+		curHealth = 500;
+		maxHealth = 500;
+	}
+	
+	
 }
 
 /**
