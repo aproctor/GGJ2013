@@ -14,6 +14,7 @@ var state : String; // Idle, Dead, Aggro
 //maybe later if state machine sticky var dead = false;
 
 
+
 function Start () {
 
 }
@@ -41,12 +42,30 @@ function ChangeState(targetState) {
  */
 function UpdateHealth(delta : int) {
 
+	//TODO: later expand this to check specific ranged triggers rather than just 0
+	
+	var targetHp = curHealth - delta;
+	
+	if(targetHp > maxHealth) {
+		//Overheal
+		curHealth = maxHealth
+	} else if(targetHp < 0) {
+		Kill()
+	} else {
+		curHealth = targetHp;
+	}
 }
 
 /**
  * Time to die
  */
 function Kill() {
-	
+	curHealth = 0;
+	state = "Dead";
+}
+
+function Revive() {
+	curHealth = maxHealth;
+	ChangeState("Aggro")
 }
 

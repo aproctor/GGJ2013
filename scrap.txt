@@ -101,3 +101,6 @@ gameObject
 
 
 static variables are accessable throughout the gameObject? (maybe scene or proj, seems unlikely)
+
+
+Filter Forge Image editor/PS plugin: https://www.youtube.com/watch?v=Op10dBJ69dU&list=PL11F87EB39F84E292  (50% off coupon, 1but it's 3 years old)
