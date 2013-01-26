@@ -27,13 +27,15 @@ function Start () {
 
 		adventurers.Push(advComp);
 		
+		var hpBar = NGUITools.AddChild(spawnPoints[i], prefab);
+		
 		if(i == 0) {
-			advComp.InitByType("tank");
+			advComp.InitByType("tank", hpBar);
 		} else {
-			advComp.InitByType("dps");
+			advComp.InitByType("dps", hpBar);
 		}
 		
-		var hpBar = NGUITools.AddChild(spawnPoints[i], prefab);
+		
 	}
 	
 	

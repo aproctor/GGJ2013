@@ -13,6 +13,8 @@ var secondaryType : String; //(eg: Main Tank, Off Tank, Dragon)
 var state : String; // Idle, Dead, Aggro
 //maybe later if state machine sticky var dead = false;
 
+var hpBarUI : GameObject;
+
 
 
 function Start () {
@@ -27,7 +29,8 @@ function LateUpdate() {
 
 }
 
-function InitByType(classType : String) {
+function InitByType(classType : String, hpBar : GameObject) {
+	hpBarUI = hpBar;
 	primaryType = classType;
 	if(classType == "tank") {
 		curHealth = 4000;
@@ -65,7 +68,6 @@ function ChangeState(targetState) {
 function UpdateHealth(delta : int) {
 
 	//TODO: later expand this to check specific ranged triggers rather than just 0
-	
 	var targetHp = curHealth - delta;
 	
 	if(targetHp > maxHealth) {
