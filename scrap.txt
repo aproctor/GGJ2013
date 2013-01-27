@@ -2,36 +2,9 @@
 Plan:
 ===========================
 
-Create Prefab/component for GameDude
- - inc health bar link
- - var cur health
- - var max health
- - var team <int>
- - var primary type <string>  (Healer, Dps, Tank, Boss)
- - var secondary type <string> (Main Tank, Off Tank)
- - inc state machine for life / death
- - var abils List<GameAbility>
- - inc <GameDude>Target
- - var map for state switching
- 	- eg: on HP <= 0, state -> Dead
- - inc threat table
- - inc list of <Cooldowns> (default: empty)
- - on update
- 	- if no cooldowns in cooldown list
- 		- pickAbility() (inc, ThreatTable.pickTarget())
- 		- Ability.cast(<Target>)
- - function updateHP(float delta)
-   - switch state
 
-Create Prefab for health bars
- - var dude <GameDude>
-
-
-
-Create Raid boss <GameDude>
- - on update
- 	- switch state based on timers*
-
+TODO:
+=====
 
 Create Threat Table
  - start with simple list of targets
@@ -58,8 +31,25 @@ Create component for abilities <GameAbility>
  - inc required state for Source
  - inc required state for Target
 
+ Update Prefab/component for GameDude
+  - var abils List<GameAbility>
+  - var map for state switching
+    - eg: on HP <= 0, state -> Dead
+  - inc threat table
+  - inc list of <Cooldowns> (default: empty)
+  - on update
+    - if no cooldowns in cooldown list
+      - pickAbility() (inc, ThreatTable.pickTarget())
+      - Ability.cast(<Target>)
+  - function updateHP(float delta)
+    - switch state
 
-Create Player object for tracking stats
+
+Probably Never:
+===============
+Create Raid boss <GameDude>
+ - on update
+  - switch state based on timers*
 
 
 
