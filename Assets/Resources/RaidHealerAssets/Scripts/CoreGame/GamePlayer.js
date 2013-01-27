@@ -10,5 +10,5 @@ function Update () {
 
 
 function CastOnTarget(targetDude : GameDude) {
-	targetDude.UpdateHealth(-500);
+	targetDude.UpdateHealth(500);
 }

@@ -1,9 +1,5 @@
 var initialScale : Vector3; 
 
-function Awake() {
-	gameObject.AddComponent(UIButton);
-}
-
 function Start () {
 	initialScale = gameObject.transform.localScale;
 }

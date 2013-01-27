@@ -51,6 +51,25 @@ function Start () {
 	
 }
 
+function DudeKilled(dude : GameDude) {
+	if(dude.team == 1) {
+		GameOver(true);
+	} else {
+		//check all adventurers, if all dead end game
+		var survivor = false;
+		for(var adv : GameDude in adventurers) {
+			if(adv.curHealth > 0) {
+				survivor = true;
+				break;
+			}
+		}
+		
+		if(survivor == false) {
+			GameOver(false);
+		}
+	}
+}
+
 function Update () {
 
 }
@@ -58,4 +77,9 @@ function Update () {
 
 function InitializeEncounter() {
 	
+}
+
+
+function GameOver(playerWon) {
+	Application.LoadLevel("Game Over");
 }

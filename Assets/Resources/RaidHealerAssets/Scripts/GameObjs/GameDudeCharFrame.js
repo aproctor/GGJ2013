@@ -20,12 +20,8 @@ function SetGameDude(dude : GameDude) {
 	gameDude = dude;
 	
 	//Change Sprite image to primaryType
-	for(var spr : UISprite in gameObject.GetComponentsInChildren(UISprite)) {		
-		if(spr.gameObject.name == "CharType") {
-			spr.spriteName = dude.primaryType;
-			break;
-		}
-	}
+	SetSpriteType(dude.primaryType);
+	
 	
 	//Change Label Text to dude's name
 	for(var label : UILabel in gameObject.GetComponentsInChildren(UILabel)) {
@@ -33,10 +29,21 @@ function SetGameDude(dude : GameDude) {
 			label.text = dude.nameStr;
 		}
 	}
-	
-	//gameObject.GetComponentInChildren(UILabel);
 }
 
-function OnClick() {
-	Debug.Log("CLICKCKLC");
+function SetSpriteType(cls : String) {
+	for(var spr : UISprite in gameObject.GetComponentsInChildren(UISprite)) {		
+		if(spr.gameObject.name == "CharType") {
+			spr.spriteName = cls;
+			break;
+		}
+	}
+}
+
+function Kill() {
+	SetSpriteType("dead");
+}
+
+function Revive() {
+	SetSpriteType(gameDude.primaryType);
 }
