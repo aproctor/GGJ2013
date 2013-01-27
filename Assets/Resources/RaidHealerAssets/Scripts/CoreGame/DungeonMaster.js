@@ -7,12 +7,20 @@
  */
  
 var adventurers : Array;
+var boss : GameDude;
 
 
 function Start () {
 	adventurers = [];
 	
-	var names = ["Aggrocrag", "Maximumus", "Deeps", "Mangnus"];
+	/*
+	 * Initialize the boss
+	 */
+	boss = new GameObject("Boss").AddComponent(GameDude);
+	var bossHp = GameObject.Find("Boss");
+	boss.InitByType("boss", bossHp, "Gorgathalion");
+	
+	var names = ["Aggrocrag", "Maximumus", "Deeps", "Mangnus", "Infernus", "Stident","Boneclaws", "Furion", "Bmedl","Botinu","Dical","Grur","Hahor","Iave","Ldinr","Lohid","Nihdu","Rifi"];
 	
 	var numAdventurers = names.Length;
 	var spawnPoints = GameObject.FindGameObjectsWithTag("adv_spawn");

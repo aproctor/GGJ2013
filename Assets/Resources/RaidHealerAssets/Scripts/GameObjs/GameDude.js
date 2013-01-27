@@ -12,6 +12,7 @@ var primaryType : String; //(eg: Healer, Dps, Tank, Boss)
 var secondaryType : String; //(eg: Main Tank, Off Tank, Dragon)
 var state : String; // Idle, Dead, Aggro
 var nameStr : String;
+var targetDude : GameDude;
 //maybe later if state machine sticky var dead = false;
 
 var characterFrameUI : GameDudeCharFrame;
@@ -41,6 +42,10 @@ function InitByType(classType : String, hpBar : GameObject, advName : String) {
 	} else if(classType == "healer") {
 		curHealth = 500;
 		maxHealth = 500;
+	} else if(classType == "boss") {
+		curHealth = 100000;
+		maxHealth = 100000;
+		team = 1;
 	}
 	
 	nameStr = advName;
@@ -96,3 +101,30 @@ function Revive() {
 	ChangeState("Aggro");
 }
 
+
+
+/**
+ *
+ */
+function PickMove() {
+	if(targetDude && targetDude.state != "Dead") {
+		//Do nothing for now	
+	} else {
+		//Find a new target
+		var dm : DungeonMaster = gameObject.GetComponent(DungeonMaster);
+		if(team == 0) {
+			for(var adv : GameDude in dm.adventurers) {
+				
+				if(adv.curHealth > 0) {
+					targetDude = adv;
+					break;
+				}
+			}
+		} else {
+			
+		}
+	}
+	
+	
+	
+}
