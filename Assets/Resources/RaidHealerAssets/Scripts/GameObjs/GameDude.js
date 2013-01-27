@@ -76,7 +76,7 @@ function ChangeState(targetState) {
 function UpdateHealth(delta : int) {
 
 	//TODO: later expand this to check specific ranged triggers rather than just 0
-	var targetHp = curHealth - delta;
+	var targetHp = curHealth + delta;
 	
 	if(targetHp > maxHealth) {
 		//Overheal

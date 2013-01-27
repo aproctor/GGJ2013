@@ -45,9 +45,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Resources\RaidHealerAssets\Scripts\CoreGame\DungeonMaster.js" />
+     <Compile Include="Assets\Resources\RaidHealerAssets\Scripts\CoreGame\GamePlayer.js" />
      <Compile Include="Assets\Resources\RaidHealerAssets\Scripts\CoreGame\LoadSceen.js" />
      <Compile Include="Assets\Resources\RaidHealerAssets\Scripts\GameObjs\GameDude.js" />
      <Compile Include="Assets\Resources\RaidHealerAssets\Scripts\GameObjs\GameDudeCharFrame.js" />
+     <Compile Include="Assets\Resources\RaidHealerAssets\Scripts\GameObjs\GameDudeClicker.js" />
      <Compile Include="Assets\Resources\RaidHealerAssets\Scripts\GameObjs\GameDudeHealthBar.js" />
      <None Include="Assets\NGUI\Resources\Shaders\Depth.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />

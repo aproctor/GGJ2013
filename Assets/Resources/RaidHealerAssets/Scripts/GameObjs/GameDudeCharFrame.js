@@ -36,3 +36,7 @@ function SetGameDude(dude : GameDude) {
 	
 	//gameObject.GetComponentInChildren(UILabel);
 }
+
+function OnClick() {
+	Debug.Log("CLICKCKLC");
+}
