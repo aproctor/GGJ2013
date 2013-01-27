@@ -30,7 +30,7 @@ Create Prefab for health bars
 
 Create Raid boss <GameDude>
  - on update
- 	- switch state based on timers
+ 	- switch state based on timers*
 
 
 Create Threat Table

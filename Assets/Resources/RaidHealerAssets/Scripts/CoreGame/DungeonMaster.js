@@ -12,7 +12,9 @@ var adventurers : Array;
 function Start () {
 	adventurers = [];
 	
-	var numAdventurers = 4;
+	var names = ["Aggrocrag", "Maximumus", "Deeps", "Mangnus"];
+	
+	var numAdventurers = names.Length;
 	var spawnPoints = GameObject.FindGameObjectsWithTag("adv_spawn");
 	
 	
@@ -30,9 +32,9 @@ function Start () {
 		var hpBar = NGUITools.AddChild(spawnPoints[i], prefab);
 		
 		if(i == 0) {
-			advComp.InitByType("tank", hpBar);
+			advComp.InitByType("tank", hpBar, names[i]);
 		} else {
-			advComp.InitByType("dps", hpBar);
+			advComp.InitByType("dps", hpBar, names[i]);
 		}
 		
 		

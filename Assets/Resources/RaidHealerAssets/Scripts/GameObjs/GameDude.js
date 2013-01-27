@@ -11,9 +11,10 @@ var team : int = 0;
 var primaryType : String; //(eg: Healer, Dps, Tank, Boss)
 var secondaryType : String; //(eg: Main Tank, Off Tank, Dragon)
 var state : String; // Idle, Dead, Aggro
+var nameStr : String;
 //maybe later if state machine sticky var dead = false;
 
-var hpBarUI : GameObject;
+var characterFrameUI : GameDudeCharFrame;
 
 
 
@@ -22,15 +23,14 @@ function Start () {
 }
 
 function Update () {
-
+	//curHealth = Random.Range(100, maxHealth);
 }
 
 function LateUpdate() {
 
 }
 
-function InitByType(classType : String, hpBar : GameObject) {
-	hpBarUI = hpBar;
+function InitByType(classType : String, hpBar : GameObject, advName : String) {
 	primaryType = classType;
 	if(classType == "tank") {
 		curHealth = 4000;
@@ -43,7 +43,10 @@ function InitByType(classType : String, hpBar : GameObject) {
 		maxHealth = 500;
 	}
 	
+	nameStr = advName;
 	
+	characterFrameUI = hpBar.GetComponentInChildren(GameDudeCharFrame);
+	characterFrameUI.SetGameDude(this);
 }
 
 /**
